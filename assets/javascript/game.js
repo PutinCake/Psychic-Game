@@ -1,20 +1,18 @@
+//set variables 
 var randomChoices = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-
 var wins = 0;
 var losses = 0;
 var numGuesses = 9;
 var guessChoices = [];
 
+//onkeyup function
 document.onkeyup = function(event) {
 
 	var userGuess = event.key;
-
+	//random letter
 	var computerGuess = randomChoices[Math.floor(Math.random() * randomChoices.length)];
 
-	var options = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z",];
-	
-
-	if (options.indexOf(userGuess) > -1) {
+	if (randomChoices.indexOf(userGuess) > -1) {
 
 		if (userGuess === computerGuess) {
 			wins++;
@@ -28,8 +26,8 @@ document.onkeyup = function(event) {
 		}
 
 		if (numGuesses === 0) {
-			numGuesses = 9;
 			losses++;
+			numGuesses = 9;
 			guessChoices = [];
 		}
 		
